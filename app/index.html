@@ -32,9 +32,9 @@
 
 
     <div class="header">
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="page-padding">
+        <div class="container-fluid">
+            <div class="page-padding">
+                <nav class="navbar navbar-default" role="navigation">
 
                         <div class="navbar-header">
                           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -51,27 +51,22 @@
                         <!-- /.navbar-header -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right profile-chooser">
                         <li class="nav dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile  <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Home</a>
-                                </li>
-                                <li><a href="#">About</a>
-                                </li>
-                                <li><a href="#">Contact</a>
-                                </li>
+                            <ul class="dropdown-menu profile-chooser-rows">
+
                             </ul>
                         </li>
                     </ul>
                     <!-- /.navbar-right -->
                         </div>
                         <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.page-padding -->
+                </nav>
             </div>
-            <!-- /.container-fluid -->
-        </nav>
+            <!-- /.page-padding -->
+        </div>
+        <!-- /.container-fluid -->
     </div>
     <!-- /.header -->
 
@@ -87,11 +82,11 @@
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label for="compose" class="sr-only control-label">ComposeMsg</label>
-                                    <div class="col-sm-8 col-sm-12">
-                                        <textarea class="form-control" id="compose" rows="5" placeholder="Post a message here..."></textarea>
+                                    <div class="col-md-8 col-sm-12">
+                                        <textarea class="form-control share-text" id="compose" rows="5" placeholder="Post a message here..."></textarea>
                                     </div>
-                                    <div class="col-sm-4 col-sm-12">
-                                        <button type="submit" class="btn btn-default btn-lg col-xs-12">Post Message</button>
+                                    <div class="col-md-4 col-sm-12">
+                                        <button type="submit" class="btn btn-default btn-lg col-xs-12 sharebutton">Post Message</button>
                                     </div>
                                 </div>
                             </form>
@@ -128,7 +123,7 @@
                                 <img src="http://www.lorempixel.com/150/150/people/6">
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 profile-name">Example Name</div>
+                                <h3 class="col-lg-6 profile-name">Example Name</h3>
                                 <div class="col-lg-6 profile-location small">example location</div>
                             </div>
                             <!-- /.row -->
@@ -166,7 +161,7 @@
             <!-- /. sidebar -->
 
             <div class="col-md-12 footer">
-                <p>♥ from the Yeoman team</p>
+                <p class="small text-center">j o s h u a        m a x w e l l</p>
             </div>
             <!-- /.footer -->
         </div>
@@ -174,10 +169,38 @@
     </div>
     <!-- /.container-fluid -->
 
+    <script class="tweet-template" type="text/template">
+        <div class="tweet col-xs-12" id="<%= tweetID %>" userId="<%= userID %>">
+            <div class="avatar">
+                <img class="avatar-pic" src="<%= avatar %>">
+            </div>  <!-- end of div.avatar -->
+            <div class="tweet-header">
+                <div class="page-padding">
+                    <span class="name"><%= name %></span>
+                    <span class="location"><%= location %></span>
+                    <span class="time"><%= time %></span>
+                </div>
+            </div>
+            <div class="message"><%= msg %></div>
+
+                <img class="isFavorite" src="<%= isFavorite %>">
+
+        </div> <!-- end of the .tweet div -->
+    </script>
+
+    <script class="profile-chooser-template" type="text/template">
+        <li class="profile-chooser-row" id="<%= userID %>">
+            <div class="chooser-avatar">
+                <img src="<%= avatar %>">
+            </div>
+            <span class="chooser-name"><%= name %></span>
+        </li>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
