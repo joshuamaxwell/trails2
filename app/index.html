@@ -2,105 +2,221 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>trails</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>trails</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
 
-    </head>
-    <body>
-        <!--[if lt IE 10]>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
 
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <h3 class="text-muted">trails</h3>
+    <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="page-padding">
+
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+
+                    <div class="glyphicon glyphicon-tree-conifer navbar-brand"></div>
+                    <span class="navbar-brand">trails</span>
+
+                        </div>
+                        <!-- /.navbar-header -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile  <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Home</a>
+                                </li>
+                                <li><a href="#">About</a>
+                                </li>
+                                <li><a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /.navbar-right -->
+                        </div>
+                        <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.page-padding -->
             </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <!-- /.header -->
 
-            <div class="jumbotron">
-                <h1>'Allo, 'Allo!</h1>
-                <p class="lead">Always a pleasure scaffolding your apps.</p>
-                <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+    <div class="container-fluid">
+        <div class="page-padding">
+            <div class="col-md-8 col-md-push-4 main">
+                <div class="col-md-12 col-sm-6">
+                    <div class="compose-tweet panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>compose</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="compose" class="sr-only control-label">ComposeMsg</label>
+                                    <div class="col-sm-8 col-sm-12">
+                                        <textarea class="form-control" id="compose" rows="5" placeholder="Post a message here..."></textarea>
+                                    </div>
+                                    <div class="col-sm-4 col-sm-12">
+                                        <button type="submit" class="btn btn-default btn-lg col-xs-12">Post Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- /.form-horizontal -->
+                        </div>
+                    </div>
+                    <!-- /.compose-tweet panel -->
+                </div>
+                <!-- / compose tweet container -->
+                <div class="col-md-12 col-sm-6">
+                    <div class="tweets panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>stream</h3>
+                        </div>
+                        <div class="panel-body"></div>
+                    </div>
+                    <!-- /.tweets panel -->
+                </div>
+                <!-- /tweets container -->
             </div>
+            <!-- /. main -->
+            <div class="clearfix visible-sm"></div>
+            <!-- this is MAGIC!!! ^^^^ -->
 
-            <div class="row marketing">
-                <div class="col-lg-6">
-                    <h4>HTML5 Boilerplate</h4>
-                    <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+            <div class="col-md-4 col-md-pull-8 sidebar">
 
-                    <h4>Sass with Compass</h4>
-                    <p>Compass is an open-source CSS Authoring Framework that uses Sass.</p>
+                <div class="col-sm-6 col-md-12">
+                    <div class="profile panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>profile</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="profile-avatar">
+                                <img src="http://www.lorempixel.com/150/150/people/6">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 profile-name">Example Name</div>
+                                <div class="col-lg-6 profile-location small">example location</div>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <h4 class="col-xs-4 posts">
+                                posts
+                                <p class="small num">200</p>
+                            </h4>
+                            <h4 class="col-xs-4 following">
+                                following
+                                <p class="small num">4</p>
+                            </h4>
+                            <h4 class="col-xs-4 trails">
+                                trails
+                                <p class="small num">5</p>
+                            </h4>
+                        </div>
+                        <!-- /.panel-footer -->
+                    </div>
+                    <!-- /.profile panel -->
+                </div>
 
 
-                    <h4>Bootstrap</h4>
-                    <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-                    <h4>Modernizr</h4>
-                    <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
+                <div class="col-sm-6 col-md-12">
+                    <div class="links panel panel-primary">
+                        <div class="panel-heading">
+                            <h3>places to visit</h3>
+                        </div>
+                        <div class="panel-body">inside places to visit</div>
+                    </div>
+                    <!-- /.links panel -->
                 </div>
             </div>
+            <!-- /. sidebar -->
 
-            <div class="footer">
+            <div class="col-md-12 footer">
                 <p>♥ from the Yeoman team</p>
             </div>
-
+            <!-- /.footer -->
         </div>
+        <!-- /.page-padding -->
+    </div>
+    <!-- /.container-fluid -->
 
 
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
 
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/plugins.js -->
+    <script src="bower_components/sass-bootstrap/js/affix.js"></script>
+    <script src="bower_components/sass-bootstrap/js/alert.js"></script>
+    <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+    <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+    <script src="bower_components/sass-bootstrap/js/modal.js"></script>
+    <script src="bower_components/sass-bootstrap/js/transition.js"></script>
+    <script src="bower_components/sass-bootstrap/js/button.js"></script>
+    <script src="bower_components/sass-bootstrap/js/popover.js"></script>
+    <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+    <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+    <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+    <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
