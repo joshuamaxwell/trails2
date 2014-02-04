@@ -61,8 +61,8 @@ var Tweet = function(userProfile) {
     this.tweetID = _.uniqueId('tweet');
     this.name = userProfile.name;
     this.userID = userProfile.userID;
-    this.location = $('.sharelocation').val();
-    this.msg = $('.share').val();
+    this.location = $('.share-location').val();
+    this.msg = $('.share-text').val();
     this.avatar = userProfile.avatar;
     this.isFavorite = favoriteFalse;
     this.date = new Date();
@@ -100,15 +100,12 @@ _.each(userArray, function(e) {
 });
 
 // fill up the page with sample data
-populateStream(50);
+populateStream(5);
 
 // set the current user to a random example user
 var currentUser = setCurrentUser(_.sample(userArray));
 
 // here begins the javascript to change the current profile upon clicking the name in the list
-$(document).on('click', '.profile-chooser', function() {
-    $('.profile-chooser > ul').toggleClass('hidden');
-});
 
 $(document).on('click', 'li.profile-chooser-row', function() {
     var clickedUserID = $(this).attr("id");
@@ -123,13 +120,14 @@ $(document).on('click', 'li.profile-chooser-row', function() {
 
 //I had to switch to $(document).on() for click events because .click() only works if the content
 //is on the page already
-$(document).on('click', '.sharebutton', function() {
+$(document).on('click', '.sharebutton', function(e) {
+    e.preventDefault();
     var tweet = new Tweet(currentUser);
     tweetArray.push(tweet);
-    $('.tweets').prepend(postTemplate(tweet));
-    $('.share').val('');
+    $('.tweets > .panel-body').prepend(postTemplate(tweet));
+    $('.share-text').val('');
     ++currentUser.numTweets;
-    $('.tweetnum > .num').text(currentUser.numTweets);
+    $('.posts > .num').text(currentUser.numTweets);
 });
 
 //All of this javascript is to mark the tweets as favoriteTrue or favoriteFalse in both the DOM and the array
@@ -165,20 +163,20 @@ function populateStream(num) {
         tweet.msg = _.sample(messages);
         tweet.location = _.sample(locations);
         tweetArray.push(tweet);
-        $('.tweets').prepend(postTemplate(tweet));
+        $('.tweets > .panel-body').prepend(postTemplate(tweet));
         ++randomUser.numTweets;
     }
 }
 
 function setCurrentUser(user) {
     currentUser = user;
-    $('.tweetnum > .num').text(user.numTweets);
+    $('.posts > .num').text(user.numTweets);
     $('.following > .num').text(user.following.length);
-    $('.locations > .num').text(user.trails.length);
-    $('.profpic img').attr("src", user.avatar);
-    $('.profname').text(user.name);
-    $('.proflocation').text(user.location);
-    $('.sharelocation').val(user.location);
+    $('.trails > .num').text(user.trails.length);
+    $('.profile-avatar img').attr("src", user.avatar);
+    $('.profile-name').text(user.name);
+    $('.profile-location').text(user.location);
+    $('.sharelocation').val(user.location); // i need a .sharelocation input field
     $('.profile-chooser > .avatar > img').attr("src", user.avatar);
     $('.profile-chooser > .name').text(user.name);
     return user;
