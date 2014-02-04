@@ -9,12 +9,12 @@ body {
     padding-bottom: 20px;
 }
 
-.page-padding {
-    padding: 0 15px;
+.header {
+    .page-padding {
+        padding: 0 15px;
+    }
 }
 
-.header {
-}
 
 .sidebar {
     padding: 0px; // to avoid the double padding
@@ -23,7 +23,6 @@ body {
         .profile-avatar {
             width: 150px;
             margin: 0 auto;
-            text-align: center;
             overflow: hidden;
             @include border-radius(50%);
         }
@@ -50,6 +49,8 @@ body {
     }
 }
 
+.footer {
+}
 
 // .browsehappy {
 //     margin: 0.2em 0;
